@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Your Calendar</title>
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+  </head>
+<body>
+<div class="container" id="container">
+
+<!--*******************日志********************-->
+<span id="look-log" class="look-log" title="Look Log"></span>
+<div class="log-main" id="log-main">
+	<div class="log-row">
+		<span class="log-span log-title">OPERATION</span>
+		<span class="log-span log-title">TIME</span>
+	</div>
+</div>
+
+<!--**************计划卡部分(动态加载)************-->
+
+<!--**************添加计划卡add plan*************-->
+<span id="add-plan" class="add-diary" title="Add plan card"></span>
+<div class="add-container">
+    <form action="" method="post" accept-charset="utf-8" class="add-main" id="add-main-form">
+      <div class="add-main-input">
+         <span>your plan</span>
+         <input type="text" name="affair" id="add-affair" value="" placeholder="">
+      </div>
+      <div class="add-main-input">
+        <span>weekdayNo</span>
+        <select name="weekdayNo" id="add-weekdayNo">
+         <option>Monday</option>
+         <option>Tuesday</option>
+         <option>Wednesday</option>
+         <option>Thursday</option>
+         <option>Friday</option>
+        </select>
+      </div>
+      <div class="add-main-input">
+        <span>begin time</span>
+        <select name="beginTime" id="add-beginTime">
+         <option>09:00</option>
+         <option>09:15</option>
+         <option>09:30</option>
+         <option>09:45</option>
+         <option>10:00</option>
+         <option>10:15</option>
+         <option>10:30</option>
+         <option>10:45</option>
+         <option>11:00</option>
+         <option>11:15</option>
+         <option>11:30</option>
+         <option>11:45</option>
+         <option>12:00</option>
+         <option>12:15</option>
+         <option>12:30</option>
+         <option>12:45</option>
+         <option>13:00</option>
+         <option>13:15</option>
+         <option>13:30</option>
+         <option>13:45</option>
+         <option>14:00</option>
+         <option>14:15</option>
+         <option>14:30</option>
+         <option>14:45</option>
+         <option>15:00</option>
+         <option>15:15</option>
+         <option>15:30</option>
+         <option>15:45</option>
+         <option>16:00</option>
+         <option>16:15</option>
+         <option>16:30</option>
+         <option>16:45</option>
+         <option>17:00</option>
+         <option>17:15</option>
+         <option>17:30</option>
+         <option>17:45</option>
+         <option>18:00</option>
+         <option>18:15</option>
+         <option>18:30</option>
+         <option>18:45</option>
+         <option>19:00</option>
+        </select>
+      </div>
+      <div class="add-main-input">
+        <span>end time</span>
+        <select name="endTime" id="add-endTime">
+         <option>09:00</option>
+         <option>09:15</option>
+         <option>09:30</option>
+         <option>09:45</option>
+         <option>10:00</option>
+         <option>10:15</option>
+         <option>10:30</option>
+         <option>10:45</option>
+         <option>11:00</option>
+         <option>11:15</option>
+         <option>11:30</option>
+         <option>11:45</option>
+         <option>12:00</option>
+         <option>12:15</option>
+         <option>12:30</option>
+         <option>12:45</option>
+         <option>13:00</option>
+         <option>13:15</option>
+         <option>13:30</option>
+         <option>13:45</option>
+         <option>14:00</option>
+         <option>14:15</option>
+         <option>14:30</option>
+         <option>14:45</option>
+         <option>15:00</option>
+         <option>15:15</option>
+         <option>15:30</option>
+         <option>15:45</option>
+         <option>16:00</option>
+         <option>16:15</option>
+         <option>16:30</option>
+         <option>16:45</option>
+         <option>17:00</option>
+         <option>17:15</option>
+         <option>17:30</option>
+         <option>17:45</option>
+         <option>18:00</option>
+         <option>18:15</option>
+         <option>18:30</option>
+         <option>18:45</option>
+         <option>19:00</option>
+        </select>
+      </div>
+      <div class="add-main-input">
+        <span>background color</span>
+        <select name="bgcolor" id="add-bgcolor">
+         <option>#ffb366</option>
+         <option>#009999</option>
+         <option>#8A2BE2</option>
+         <option>#80aaff</option>
+         <option>#9900ff</option>
+        </select>
+      </div>
+   </form>
+   <button type="" class="add-main-button" id="add-main-button">ADD</button>
+   <button type="" class="add-main-button modify-main-button cancel-button" id="cancel-add-button">CANCEL</button>
+</div>
+
+<!--**********修改计划卡modify plan**************-->
+<div class="modify-container">
+    <form action="" method="post" accept-charset="utf-8" class="add-main" id="modify-main-form">
+      <div class="add-main-input">
+         <span>your plan</span>
+         <input type="text" name="modify-affair" id="modify-affair" value="" placeholder="">
+      </div>
+      <div class="add-main-input">
+        <span>weekdayNo</span>
+        <select name="weekdayNo" id="modify-weekdayNo">
+         <option>Monday</option>
+         <option>Tuesday</option>
+         <option>Wednesday</option>
+         <option>Thursday</option>
+         <option>Friday</option>
+        </select>
+      </div>
+      <div class="add-main-input">
+        <span>begin time</span>
+        <select name="beginTime" id="modify-beginTime">
+         <option>09:00</option>
+         <option>09:15</option>
+         <option>09:30</option>
+         <option>09:45</option>
+         <option>10:00</option>
+         <option>10:15</option>
+         <option>10:30</option>
+         <option>10:45</option>
+         <option>11:00</option>
+         <option>11:15</option>
+         <option>11:30</option>
+         <option>11:45</option>
+         <option>12:00</option>
+         <option>12:15</option>
+         <option>12:30</option>
+         <option>12:45</option>
+         <option>13:00</option>
+         <option>13:15</option>
+         <option>13:30</option>
+         <option>13:45</option>
+         <option>14:00</option>
+         <option>14:15</option>
+         <option>14:30</option>
+         <option>14:45</option>
+         <option>15:00</option>
+         <option>15:15</option>
+         <option>15:30</option>
+         <option>15:45</option>
+         <option>16:00</option>
+         <option>16:15</option>
+         <option>16:30</option>
+         <option>16:45</option>
+         <option>17:00</option>
+         <option>17:15</option>
+         <option>17:30</option>
+         <option>17:45</option>
+         <option>18:00</option>
+         <option>18:15</option>
+         <option>18:30</option>
+         <option>18:45</option>
+         <option>19:00</option>
+        </select>
+      </div>
+      <div class="add-main-input">
+        <span>end time</span>
+        <select name="endTime" id="modify-endTime">
+         <option>09:00</option>
+         <option>09:15</option>
+         <option>09:30</option>
+         <option>09:45</option>
+         <option>10:00</option>
+         <option>10:15</option>
+         <option>10:30</option>
+         <option>10:45</option>
+         <option>11:00</option>
+         <option>11:15</option>
+         <option>11:30</option>
+         <option>11:45</option>
+         <option>12:00</option>
+         <option>12:15</option>
+         <option>12:30</option>
+         <option>12:45</option>
+         <option>13:00</option>
+         <option>13:15</option>
+         <option>13:30</option>
+         <option>13:45</option>
+         <option>14:00</option>
+         <option>14:15</option>
+         <option>14:30</option>
+         <option>14:45</option>
+         <option>15:00</option>
+         <option>15:15</option>
+         <option>15:30</option>
+         <option>15:45</option>
+         <option>16:00</option>
+         <option>16:15</option>
+         <option>16:30</option>
+         <option>16:45</option>
+         <option>17:00</option>
+         <option>17:15</option>
+         <option>17:30</option>
+         <option>17:45</option>
+         <option>18:00</option>
+         <option>18:15</option>
+         <option>18:30</option>
+         <option>18:45</option>
+         <option>19:00</option>
+        </select>
+      </div>
+      <div class="add-main-input">
+        <span>background color</span>
+        <select name="bgcolor" id="modify-bgcolor">
+         <option>#ffb366</option>
+         <option>#009999</option>
+         <option>#8A2BE2</option>
+         <option>#80aaff</option>
+         <option>#9900ff</option>
+        </select>
+      </div>
+   </form>
+   <button type="" class="add-main-button modify-main-button" mid="" id="modify-main-button">MODIFY</button>
+   <button type="" class="add-main-button modify-main-button cancel-button" id="cancel-modify-button">CANCEL</button>
+</div>
+ 
+
+<!--************ 表格部分******************-->
+<table class="main">
+   		<thead>
+   			<tr>
+   				<th>Monday</th>
+   				<th>Tuesday</th>
+   				<th>Wednesday</th>
+   				<th>Thursday</th>
+   				<th class="br">Friday
+   				</th>
+   			</tr>
+   		</thead>
+   		<tbody>
+   			<tr>
+   				<td><span class="side-bar-time">09:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td> <span class="side-bar-time">10:00</span> </td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">11:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">12:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">13:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">14:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">15:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">16:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">17:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td><span class="side-bar-time">18:00</span></td>
+   				<td></td>
+   				<td></td>
+   				<td></td>
+   				<td class="br"></td>
+   			</tr>
+   			<tr>
+   				<td class="bb"></td>
+   				<td class="bb"></td>
+   				<td class="bb"></td>
+   				<td class="bb"></td>
+   				<td class="br bb"></td>
+   			</tr>
+   		</tbody>
+</table>
+</div>
+</body>
+<script src="./javascripts/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./javascripts/script.js" type="text/javascript" charset="utf-8"></script>
+</html>

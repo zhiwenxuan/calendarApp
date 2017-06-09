@@ -1,0 +1,247 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  position: relative;
+}
+*{
+	padding: 0;
+	margin:0;
+}
+a {
+  color: #00B7FF;
+}
+a:hover{
+	text-decoration: none;
+}
+.add-diary{
+	position: fixed;
+	display: block;
+	width: 50px;
+	height: 50px;
+	right: 10%;
+	top: 40px;
+	transform: translateX(50px);
+	background-image: url(../images/add.png);
+}
+.look-log{
+	position: fixed;
+	display: block;
+	width: 40px;
+	height: 40px;
+	right: 10%;
+	top: 100px;
+	transform: translateX(44px);
+	background-image: url(../images/log.png);
+}
+.log-main{
+	width: 360px;
+	height: 420px;
+	padding: 5px;
+    position: absolute;
+    right: 0;
+    top:75px;
+    display: none;
+    background-color: #212121;
+    z-index: 7;
+    border-radius: 8px;
+    overflow-y: scroll;
+}
+.log-main .log-row{
+     margin-bottom: 10px;
+}
+.log-main .log-span{
+	display: inline-block;
+	width: 49%;
+	box-sizing: border-box;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+}
+.log-title{
+	text-align: center;
+	font-size: 18px;
+	margin-top:10px;
+	font-weight:bold;
+}
+
+.container{
+	width: 80%;
+	min-width: 600px;
+	margin:40px auto;
+	position: relative;
+}
+.details{
+	position: absolute;
+	transform: translate(2px,53px);
+	box-sizing: border-box;
+	padding: 15px 30px;
+	width: 20%;
+	z-index: 5;
+	font-size: 18px;
+	color:#fff;
+	min-height: 50px;
+}
+.details:hover{
+	transform: scale(1.2);
+	z-index: 6;
+}
+.details:hover .details-edit{
+	display: inline-block;
+}
+.details:hover .details-delete{
+	display: inline-block;
+}
+.details-time{
+	font-size: 14px;
+}
+.details-text{
+	font-weight: bold;
+}
+.details-edit{
+	height: 25px;
+	width: 25px;
+	position: absolute;
+	right: 35px;
+	bottom: 5px;
+	display: none;
+	background-image:url(../images/edit.png);
+}
+.details-delete{
+	height: 25px;
+	width: 25px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	display: none;
+	background-image:url(../images/delete.png);
+}
+table{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+thead{
+	box-sizing: border-box;
+	height: 48px;
+}
+tr{
+	box-sizing: border-box;
+	height: 48px;
+}
+.main th{
+   position: relative;
+   padding: 0;
+   margin: 0;
+   width: 20%;
+   border-top:1px solid #eee;
+   border-left:1px solid #eee;
+   box-sizing: border-box;
+   height: 48px;
+   line-height: 48px;
+   text-align: center;
+   font-size: 20px;
+}
+.main td{
+	position: relative;
+   padding: 0;
+   margin: 0;
+   width: 20%;
+   box-sizing: border-box;
+    border-top:1px solid #eee;
+   border-left:1px solid #eee;
+   height: 48px;
+}
+.side-bar-time{
+	position: absolute;
+	left: -60px;
+    top: -10px;
+    font-size: 14px;
+}
+.br{
+     border-right:1px solid #eee;
+}
+.bb{
+     border-bottom:1px solid #eee;
+}
+.pt50{
+	padding-top: 50px;
+}
+
+/************add plan*****************/
+.add-container{
+	width: 300px;
+	padding: 20px;
+    position: absolute;
+    right: 0;
+    top:25px;
+    display: none;
+    background-color: #eee;
+    z-index: 7;
+    border-radius: 8px;
+}
+.add-main-input span{
+	margin-bottom: 5px;
+	font-size: 18px;
+	color:#4D4D4D;
+	font-weight: 700;
+}
+.add-main-input input{
+	width: 100%;
+	height: 40px;
+	padding:5px;
+	box-sizing: border-box;
+	margin:2px 0 10px 0;
+	border-radius: 5px;
+	font-size: 16px;
+	color:   #555;
+	border:none;
+	border:2px #ccc solid;
+}
+.add-main-input select{
+	width: 100%;
+	height: 40px;
+	padding:5px;
+	margin:2px 0 10px 0;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 16px;
+	color: #555;
+	border:none;
+	border:2px #ccc solid;
+}
+.add-main-button{
+	float: right;
+	margin:5px;
+	width: 60px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 16px;
+	text-align: center;
+	background-color: #1C86EE;
+	border:1px #1C86EE solid;
+	border-radius: 5px;
+	color: #fff;
+}
+
+/**************modify plan******************/
+.modify-container{
+	width: 300px;
+	padding: 20px;
+    position: absolute;
+    right: 400px;
+    top:100px;
+    display: none;
+    background-color: #4EEE94;
+    z-index: 7;
+    border-radius: 8px;
+}
+.modify-main-button{
+   background-color: #1874CD;
+   border:1px #1874CD solid;
+   width: 80px;
+}
+.cancel-button{
+	background-color: #8E8E8E;
+   border:1px #8E8E8E solid;
+}
