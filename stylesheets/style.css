@@ -82,7 +82,7 @@ a:hover{
 	min-height: 50px;
 }
 .details:hover{
-	transform: scale(1.2);
+	box-shadow:2px 2px 2px #8E8E8E;
 	z-index: 6;
 }
 .details:hover .details-edit{
